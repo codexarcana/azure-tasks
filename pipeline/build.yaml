@@ -6,3 +6,6 @@ pool:
 
 steps:
   - script: "echo hello world"
+  - task: BuildAndRelease@0
+    inputs:
+      samplestring: 'stream'
