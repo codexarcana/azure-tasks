@@ -8,5 +8,6 @@ steps:
   - script: |
       set -ex
       pushd buildAndReleaseTask
+        npm install
         npm run test
       popd
