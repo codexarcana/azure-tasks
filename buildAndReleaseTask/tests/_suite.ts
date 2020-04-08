@@ -4,13 +4,15 @@ import * as ttm from 'azure-pipelines-task-lib/mock-test';
 
 describe('Should replace file placeholders using inputs', () => {
 
-    it('Should replace single placeholder with input entries', () => {});
+    it('Should replace single placeholder with input entries', () => {
+
+    });
 
 });
 
 describe('Sample task tests', function () {
 
-    before( function() {
+    before(function() {
 
     });
 
@@ -30,7 +32,7 @@ describe('Sample task tests', function () {
 });
 
 it('should succeed with simple inputs', function(done: MochaDone) {
-    this.timeout(1000);
+    this.timeout(10000);
 
     let tp = path.join(__dirname, 'success.js');
     let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -46,7 +48,7 @@ it('should succeed with simple inputs', function(done: MochaDone) {
 });
 
 it('it should fail if tool returns 1', function(done: MochaDone) {
-    this.timeout(1000);
+    this.timeout(10000);
 
     let tp = path.join(__dirname, 'failure.js');
     let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
