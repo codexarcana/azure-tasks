@@ -20,10 +20,12 @@ describe('Sample task tests', function () {
 
     it('should succeed with simple inputs', function(done: MochaDone) {
         // Add success test here
+        done()
     });
 
     it('it should fail if tool returns 1', function(done: MochaDone) {
         // Add failure test here
+        done();
     });    
 });
 
