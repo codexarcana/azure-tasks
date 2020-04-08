@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - script: "echo hello world"
-  - task: BuildAndRelease@0
-    inputs:
-      samplestring: 'stream'
+  - script: |
+      pushd buildAndReleaseTask
+        npm run test
+      popd
