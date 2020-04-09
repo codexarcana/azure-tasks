@@ -17,6 +17,6 @@ steps:
       tfx extension publish \
         --no-prompt \
         --manifest-globs vss-extension.json \
-        --override "{ \"version\": \"0.0.${Build.BuildId}\"  }" \
+        --override '{ "version": "0.0.$(BuildID)"  }' \
         --share-with codexarcana \
         --token $(PAT)
