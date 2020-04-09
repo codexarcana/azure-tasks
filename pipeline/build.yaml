@@ -12,9 +12,11 @@ steps:
         npm run test
       popd
 
+      npm install -g tfx-cli@0.7.11
+
       tfx extension publish \
         --no-prompt \
         --manifest-globs vss-extension.json \
-        --override "{ \"version\": \"0.0.${BuildID}\"  }" \
+        --override "{ \"version\": \"0.0.${Build.BuildId}\"  }" \
         --share-with codexarcana \
         --token $(PAT)
