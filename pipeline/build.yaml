@@ -4,9 +4,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-  versionNumber: '$(Build.BuildNumber)'
-
 steps:
   - script: |
       set -ex
@@ -18,11 +15,11 @@ steps:
         npm run test
       popd
 
-      sudo npm install tfx-cli@0.7.11
+      sudo npm install -g tfx-cli@0.7.11
 
       tfx extension publish \
         --no-prompt \
         --manifest-globs vss-extension.json \
-        --override "{ \"version\": \"1.0.${versionNumber}\" }" \
+        --override "{ \"version\": \"1.0.${BUILD_BUILDID}\" }" \
         --share-with codexarcana \
         --token $(PAT)
