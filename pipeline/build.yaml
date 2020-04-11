@@ -30,7 +30,7 @@ steps:
       set -ex
       az extension add --name azure-devops
 
-      AZURE_DEVOPS_EXT_PAT="$(PAT)" az devops login --organization https://dev.azure.com/codexarcana/ --debug
+      cat "$(PAT)" | az devops login --organization https://dev.azure.com/codexarcana/ --debug
 
       az devops extension install \
         --debug \
