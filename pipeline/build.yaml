@@ -32,6 +32,8 @@ steps:
 
       echo "$(PAT)" | az devops login --organization https://dev.azure.com/codexarcana/
 
+      set +e
+      
       az devops extension install \
         --organization https://dev.azure.com/codexarcana \
         --publisher-id codexarcana \
