@@ -5,7 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - script: |
+  - displayName: Test Tasks
+    script: |
       set -ex
       
       env
@@ -15,6 +16,8 @@ steps:
         npm run test
       popd
 
+  - displayName: Publish Extension
+    script: |
       sudo npm install -g tfx-cli@0.7.11
 
       tfx extension publish \
@@ -23,3 +26,14 @@ steps:
         --override "{ \"version\": \"1.0.${BUILD_BUILDID}\" }" \
         --share-with codexarcana \
         --token $(PAT)
+
+  - displayName: Install Extension To Codex Arcana
+    script: |
+      az extension add --name azure-devops
+
+      AZURE_DEVOPS_EXT_PAT="$(PAT)" az devops login --organization https://dev.azure.com/codexarcana/
+
+      az devops extension install \
+        --organization https://dev.azure.com/codexarcana \
+        --publisher-id codexarcana \
+        --extension-id build-release-task

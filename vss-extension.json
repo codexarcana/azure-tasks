@@ -9,7 +9,7 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "description": "CodexArcana Tools for building/releasing. Includes one build/release task.",
+    "description": "CodexArcana Tools for building/releasing software.",
     "categories": [
         "Azure Pipelines"
     ],
