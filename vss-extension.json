@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
-    "id": "build-release-task",
-    "name": "CodexArcana Build And Release Tools",
+    "id": "codexarcana-pipeline-tasks",
+    "name": "CodexArcana Pipeline Custom Tasks",
     "version": "0.0.1",
     "publisher": "codexarcana",
     "targets": [
@@ -18,7 +18,7 @@
     },
     "files": [
         {
-            "path": "buildAndReleaseTask"
+            "path": "process-template-files"
         }
     ],
     "contributions": [
@@ -29,7 +29,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "buildAndReleaseTask"
+                "name": "process-template-files"
             }
         }
     ]

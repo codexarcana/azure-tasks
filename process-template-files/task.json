@@ -1,0 +1,39 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "7d4d565b-045b-4f76-a38b-3a6513e56bbb",
+    "name": "ProcessTemplateFiles",
+    "friendlyName": "ProcessTemplateFiles",
+    "description": "Process One Or More Template Files And Replaces Expressions With Inputs",
+    "helpMarkDown": "Process one or more template files replacing expressions with inputs",
+    "category": "Utility",
+    "author": "eldermael",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "ProcessTemplateFiles",
+    "inputs": [
+        {
+            "name": "templateFiles",
+            "type": "multiline",
+            "label": "Template Files",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "A list of files or directories separated by newlines"
+        },
+        {
+            "name": "variables",
+            "type": "multiline",
+            "label": "Variables",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Variables to be replaced in YAML format"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}
