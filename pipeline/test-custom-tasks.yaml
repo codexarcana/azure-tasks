@@ -7,6 +7,5 @@ pool:
 steps:
 - task: ProcessTemplateFiles@0
   inputs:
-    templateFiles: "/does/not/exist"
-    variables: |
-      key: value
+    templateFiles: 'directory/file.ext'
+    variables: 'codexarcana: true'
