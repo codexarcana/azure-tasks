@@ -2,3 +2,4 @@
 .taskkey
 *.vsix
 \#.*\#
+*.js.map
