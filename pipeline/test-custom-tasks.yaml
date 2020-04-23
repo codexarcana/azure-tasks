@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- ProcessTemplateFiles@0
+- task: ProcessTemplateFiles@0
   inputs:
     templateFiles: "/does/not/exist"
     variables: |
