@@ -1,8 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "7d4d565b-045b-4f76-a38b-3a6513e56bbb",
+    "id": "d9b779f1-cfa0-4a93-b60c-5751a36a0e5a",
     "name": "ProcessTemplateFiles",
-    "friendlyName": "ProcessTemplateFiles",
+    "friendlyName": "Process Template Files",
     "description": "Process One Or More Template Files And Replaces Expressions With Inputs",
     "helpMarkDown": "Process one or more template files replacing expressions with inputs",
     "category": "Utility",
