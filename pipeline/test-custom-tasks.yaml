@@ -5,4 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- bash: echo "Hello, World!"
+- ProcessTemplateFiles@0
+  inputs:
+    templateFiles: "/does/not/exist"
+    variables: |
+      key: value
