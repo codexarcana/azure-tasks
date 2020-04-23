@@ -39,5 +39,5 @@ steps:
       az devops extension install \
         --organization https://dev.azure.com/codexarcana \
         --publisher-id codexarcana \
-        --extension-id build-release-task || true
+        --extension-id codexarcana-pipeline-tasks || true
     displayName: Install Extension To Codex Arcana
