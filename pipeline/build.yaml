@@ -8,11 +8,13 @@ steps:
   - script: |
       set -ex
 
-      pushd buildAndReleaseTask
+      pushd process-template-files
         npm install
         npm run test
+        rm -rf node_modules
+        npm install --production
       popd
-    displayName: Test Tasks
+    displayName: Test All Custom Tasks
 
   - script: |
       set -ex
