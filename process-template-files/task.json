@@ -29,6 +29,14 @@
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "Variables to be replaced in YAML format"
+        },
+        {
+            "name": "outputDir",
+            "type": "string",
+            "label": "Output Directory",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Output directory for rendered templates"
         }
     ],
     "execution": {

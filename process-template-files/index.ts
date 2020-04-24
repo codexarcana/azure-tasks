@@ -1,28 +1,15 @@
-import tl = require('azure-pipelines-task-lib/task');
-import { sync as globSync } from 'glob-all';
+import { processTemplates } from './src/run';
 import { safeLoad } from 'js-yaml';
+import tl = require('azure-pipelines-task-lib/task');
 
-async function run() {
+const templateFilePaths = tl.getInput('templateFiles', true) as string;
+const variablesText = tl.getInput('variables', true) as string;
+const outputDir = tl.getInput('outputDir', true) as string;
 
-    const templateFilePaths = tl.getInput('templateFiles', true);
-    const variablesText = tl.getInput('variables', true);
+const variables = safeLoad(variablesText) as {
+    [key: string]: string;
+};
 
-    const globs = (templateFilePaths as string)
-        .split('\n')
-        .map(globPath => globSync([globPath]))
+const globs = templateFilePaths.split('\n');
 
-    const allFiles = ([] as string[]).concat(...globs);
-
-    const variables = safeLoad(variablesText as string) as {
-        [key: string]: string
-    };
-
-    console.log(`Processing with variables ${variables}`);
-
-    allFiles.forEach(file => {
-        console.log(`File to process: ${file}`);
-    });
-
-}
-
-run();
+processTemplates(globs, outputDir, variables);
