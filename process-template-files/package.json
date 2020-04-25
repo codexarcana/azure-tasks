@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "tsc && jest"
+        "test": "tsc && jest",
+        "build": "tsc"
     },
     "author": "eldermael",
     "license": "ISC",

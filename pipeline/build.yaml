@@ -5,16 +5,27 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  - checkout: self
+
   - script: |
       set -ex
 
       pushd process-template-files
         npm install
         npm run test
-        rm -rf node_modules
-        npm install --production
       popd
     displayName: Test All Custom Tasks
+
+  - script: |
+      set -ex
+
+      pushd process-template-files
+        git clean -ffdx
+        git reset --hard HEAD
+        npm install --production
+        npm build
+      popd
+      displayName: Build Production Code
 
   - script: |
       set -ex
