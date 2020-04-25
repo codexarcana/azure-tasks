@@ -1,11 +1,13 @@
-trigger:
-- master
-
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
 - task: ProcessTemplateFiles@0
   inputs:
-    templateFiles: 'directory/file.ext'
+    templateFiles: 'pipeline/e2e/*.tpl'
     variables: 'codexarcana: true'
+    outputDirectory: '/tmp/output'
+
+- bash: |
+    ls -lah /tmp/output
+    cat /tmp/output/*.tpl
