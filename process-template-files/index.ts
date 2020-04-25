@@ -1,6 +1,6 @@
 import { processTemplates } from './src/run';
 import { safeLoad } from 'js-yaml';
-import tl = require('azure-pipelines-task-lib/task');
+import * as tl from 'azure-pipelines-task-lib/task';
 
 const templateFilePaths = tl.getInput('templateFiles', true) as string;
 const variablesText = tl.getInput('variables', true) as string;
