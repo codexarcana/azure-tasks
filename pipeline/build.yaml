@@ -10,6 +10,7 @@ steps:
   - script: |
       set -ex
 
+      export CI='AzDO'
       pushd process-template-files
         npm install
         npm run test
