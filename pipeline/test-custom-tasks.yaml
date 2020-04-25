@@ -14,7 +14,7 @@ steps:
   inputs:
     templateFiles: 'pipeline/e2e/*.tpl'
     variables: 'codexarcana: true'
-    outputDirectory: '/tmp/output'
+    outputDir: '/tmp/output'
 
 - bash: |
     ls -lah /tmp/output
