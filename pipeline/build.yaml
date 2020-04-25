@@ -22,9 +22,10 @@ steps:
       pushd process-template-files
         git clean -ffdx
         git reset --hard HEAD
-        sudo npm install -g typescript
-        npm install --production
+        npm install
         npm run build
+        rm -rf node_modules
+        npm install --production
       popd
     displayName: Build Production Code
 
