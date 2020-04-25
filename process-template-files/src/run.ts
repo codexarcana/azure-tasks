@@ -15,6 +15,8 @@ export async function processTemplates(
 
     const allFiles = ([] as string[]).concat(...globs);
 
+    tl.debug(`Processing files: \n${allFiles}`);
+
     const processing = allFiles.map(async file => {
 
         const contents = await readFile(file);
