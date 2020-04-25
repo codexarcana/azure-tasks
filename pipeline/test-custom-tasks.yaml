@@ -1,6 +1,14 @@
 pool:
   vmImage: 'ubuntu-latest'
 
+resources:
+  pipelines:
+  - pipeline: custom-tasks   # Name of the pipeline resource
+    source: codexarcana.azure-tasks
+    trigger:
+      branches:
+      - master
+
 steps:
 - task: ProcessTemplateFiles@0
   inputs:
