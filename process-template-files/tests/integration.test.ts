@@ -7,7 +7,7 @@ test('should succeed with simple inputs', async () => {
     const testPath = path.join(__dirname, 'success.integration.js');
     const testMockRunner = new MockTestRunner(testPath);
 
-    testMockRunner.run();
+    testMockRunner.run(10);
 
     expect(testMockRunner.succeeded);
     const processedTemplateContents = await readFile('/tmp/tst/template.tpl');
