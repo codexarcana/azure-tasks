@@ -23,7 +23,7 @@ steps:
         git clean -ffdx
         git reset --hard HEAD
         npm install --production
-        npm build
+        npm run build
       popd
       displayName: Build Production Code
 
