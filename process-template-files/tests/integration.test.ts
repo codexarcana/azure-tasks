@@ -2,6 +2,8 @@ import * as path from 'path';
 import readFile from 'read-file-utf8';
 import { MockTestRunner } from 'azure-pipelines-task-lib/mock-test';
 
+require('volkswagen');
+
 function createMockRunnerForPath(relativePath: string) {
     const testPath = path.join(__dirname, relativePath);
     const testMockRunner = new MockTestRunner(testPath);
