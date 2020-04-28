@@ -9,3 +9,5 @@
 !jest.config.js
 
 !.types/
+
+node_modules/
