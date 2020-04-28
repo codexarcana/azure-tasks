@@ -6,3 +6,6 @@
 *.js.map
 
 \#*\#
+!jest.config.js
+
+!.types/
