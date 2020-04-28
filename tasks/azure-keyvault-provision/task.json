@@ -1,0 +1,92 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "d9b779f1-cfa0-4a93-b60c-5751a36a0e5a",
+    "name": "AzureKeyVaultProvisioning",
+    "friendlyName": "ProvisionAzureKeyVault",
+    "description": "Provisions a new instance of Azure Key Vault with optional entries",
+    "helpMarkDown": "Process one or more template files replacing expressions with inputs",
+    "category": "Utility",
+    "author": "eldermael",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "ProvisionAzureKeyVault",
+    "inputs": [
+        {
+            "name": "connectionType",
+            "type": "pickList",
+            "label": "Connection Type",
+            "defaultValue": "Azure Resource Manager",
+            "required": true,
+            "options": {
+                "Azure Resource Manager": "Azure Resource Manager",
+                "Kubernetes Service Connection": "Kubernetes Service Connection",
+                "None": "None"
+            },
+            "helpMarkDown": "Select 'Azure Resource Manager' to connect to an Azure Kubernetes Service by using Azure Service Connection. Select 'Kubernetes Service Connection' to connect to any Kubernetes cluster by using kubeconfig or Service Account",
+            "groupName": "cluster"
+        },
+        {
+            "name": "azureSubscriptionEndpoint",
+            "aliases": [
+                "azureSubscription"
+            ],
+            "type": "connectedService:AzureRM",
+            "label": "Azure subscription",
+            "helpMarkDown": "Select an Azure subscription, which has your Azure Container Registry.",
+            "visibleRule": "connectionType = Azure Resource Manager",
+            "defaultValue": "",
+            "required": true,
+            "groupName": "cluster"
+        },
+        {
+            "name": "azureResourceGroup",
+            "label": "Resource group",
+            "type": "pickList",
+            "helpMarkDown": "Select an Azure Resource Group.",
+            "visibleRule": "connectionType = Azure Resource Manager",
+            "defaultValue": "",
+            "required": true,
+            "groupName": "cluster",
+            "properties": {
+                "EditableOptions": "True"
+            }
+        },
+        {
+            "name": "kubernetesCluster",
+            "label": "Kubernetes cluster",
+            "type": "pickList",
+            "helpMarkDown": "Select an Azure Managed Cluster.",
+            "visibleRule": "connectionType = Azure Resource Manager",
+            "defaultValue": "",
+            "required": true,
+            "groupName": "cluster",
+            "properties": {
+                "EditableOptions": "True"
+            }
+        },
+        {
+            "name": "keyVaultName",
+            "label": "Key Vault name",
+            "type": "string",
+            "helpMarkDown": "The name of the Key Vault to create",
+            "defaultValue": "",
+            "required": true
+        },
+        {
+            "name": "keyValueEntries",
+            "label": "Entries to setup in the Key Vault in YAML Format",
+            "type": "multiline",
+            "helpMarkDown": "A list of entries in YAML format to setup in the KeyVault",
+            "defaultValue": "",
+            "required": false
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}

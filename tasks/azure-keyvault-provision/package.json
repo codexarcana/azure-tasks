@@ -1,0 +1,33 @@
+{
+    "name": "process-template-files",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "tsc && jest",
+        "build": "tsc"
+    },
+    "author": "eldermael",
+    "license": "ISC",
+    "dependencies": {
+        "azure-pipelines-task-lib": "^2.9.3",
+        "glob-all": "^3.2.1",
+        "js-yaml": "^3.13.1",
+        "mustache": "^4.0.1",
+        "read-file-utf8": "^2.0.3",
+        "write": "^2.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.1",
+        "@types/js-yaml": "^3.12.3",
+        "@types/mustache": "^4.0.1",
+        "@types/node": "^13.11.0",
+        "@types/q": "^1.5.2",
+        "@types/write": "^2.0.0",
+        "jest": "^25.4.0",
+        "sync-request": "^3.0.1",
+        "ts-jest": "^25.4.0",
+        "typescript": "^3.8.3",
+        "volkswagen": "^1.4.2"
+    }
+}
