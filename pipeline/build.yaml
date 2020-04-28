@@ -14,14 +14,27 @@ steps:
         npm install
         npm run test
       popd
+
+      pushd tasks/azure-keyvault-provision
+        npm install
+        npm run test
+      popd
     displayName: Test All Custom Tasks
 
   - script: |
       set -ex
 
+      git clean -ffdx
+      git reset --hard HEAD
+
       pushd tasks/process-template-files
-        git clean -ffdx
-        git reset --hard HEAD
+        npm install
+        npm run build
+        rm -rf node_modules
+        npm install --production
+      popd
+
+      pushd tasks/azure-keyvault-provision
         npm install
         npm run build
         rm -rf node_modules
