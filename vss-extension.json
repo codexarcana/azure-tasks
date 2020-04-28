@@ -18,7 +18,7 @@
     },
     "files": [
         {
-            "path": "process-template-files"
+            "path": "tasks/process-template-files"
         }
     ],
     "contributions": [
