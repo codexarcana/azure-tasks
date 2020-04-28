@@ -11,7 +11,7 @@ steps:
       set -ex
 
       export CI='AzDO'
-      pushd process-template-files
+      pushd tasks/process-template-files
         npm install
         npm run test
       popd
@@ -20,7 +20,7 @@ steps:
   - script: |
       set -ex
 
-      pushd process-template-files
+      pushd tasks/process-template-files
         git clean -ffdx
         git reset --hard HEAD
         npm install
