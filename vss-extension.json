@@ -19,6 +19,9 @@
     "files": [
         {
             "path": "tasks/process-template-files"
+        },
+        {
+            "path": "tasks/azure-keyvault-provision"
         }
     ],
     "contributions": [
@@ -29,7 +32,17 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "process-template-files"
+                "name": "tasks/process-template-files"
+            }
+        },
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/azure-keyvault-provision"
             }
         }
     ]
