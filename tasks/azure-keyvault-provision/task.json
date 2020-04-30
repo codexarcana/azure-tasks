@@ -29,7 +29,6 @@
             "required": true,
             "options": {
                 "Azure Resource Manager": "Azure Resource Manager",
-                "Kubernetes Service Connection": "Kubernetes Service Connection",
                 "None": "None"
             },
             "helpMarkDown": "Select 'Azure Resource Manager' to connect to an Azure Kubernetes Service by using Azure Service Connection. Select 'Kubernetes Service Connection' to connect to any Kubernetes cluster by using kubeconfig or Service Account",
@@ -53,19 +52,6 @@
             "label": "Resource group",
             "type": "pickList",
             "helpMarkDown": "Select an Azure Resource Group.",
-            "visibleRule": "connectionType = Azure Resource Manager",
-            "defaultValue": "",
-            "required": true,
-            "groupName": "cluster",
-            "properties": {
-                "EditableOptions": "True"
-            }
-        },
-        {
-            "name": "kubernetesCluster",
-            "label": "Kubernetes cluster",
-            "type": "pickList",
-            "helpMarkDown": "Select an Azure Managed Cluster.",
             "visibleRule": "connectionType = Azure Resource Manager",
             "defaultValue": "",
             "required": true,
