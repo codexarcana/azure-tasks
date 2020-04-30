@@ -19,3 +19,13 @@ steps:
 - bash: |
     ls -lah /tmp/output
     cat /tmp/output/*.tpl
+
+- task: AzureKeyVaultProvisioning@0
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureResourceGroup: 'TestPipelineRg'
+    azureSubscription: 'codexarcana'
+    keyVaultName: 'PipelineKeyVault'
+    keyValueEntries: |
+      secret: '${{ variables.secret }}'
+      anotherSecret: '${{ variables.anotherSecret }}'
