@@ -48,19 +48,6 @@
             "groupName": "cluster"
         },
         {
-            "name": "azureSubscriptionEndpoint",
-            "aliases": [
-                "azureSubscription"
-            ],
-            "type": "connectedService:AzureRM",
-            "label": "Azure subscription",
-            "helpMarkDown": "Select an Azure subscription, which has your Azure Container Registry.",
-            "visibleRule": "connectionType = Azure Resource Manager",
-            "defaultValue": "",
-            "required": true,
-            "groupName": "cluster"
-        },
-        {
             "name": "azureResourceGroup",
             "label": "Resource group",
             "type": "pickList",
