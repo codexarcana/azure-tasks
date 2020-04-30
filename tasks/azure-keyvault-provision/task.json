@@ -48,6 +48,19 @@
             "groupName": "cluster"
         },
         {
+            "name": "azureSubscriptionEndpoint",
+            "aliases": [
+                "azureSubscription"
+            ],
+            "type": "connectedService:AzureRM",
+            "label": "Azure subscription",
+            "helpMarkDown": "Select an Azure subscription, which has your Azure Container Registry.",
+            "visibleRule": "connectionType = Azure Resource Manager",
+            "defaultValue": "",
+            "required": true,
+            "groupName": "cluster"
+        },
+        {
             "name": "azureResourceGroup",
             "label": "Resource group",
             "type": "pickList",
@@ -75,6 +88,15 @@
             "helpMarkDown": "A list of entries in YAML format to setup in the KeyVault",
             "defaultValue": "",
             "required": false
+        }
+    ],
+    "dataSourceBindings": [
+        {
+            "target": "azureResourceGroup",
+            "endpointId": "$(azureSubscriptionEndpoint)",
+            "endpointUrl": "{{{endpoint.url}}}/subscriptions/{{{endpoint.subscriptionId}}}/providers/Microsoft.ContainerService/managedClusters?api-version=2017-08-31",
+            "resultSelector": "jsonpath:$.value[*]",
+            "resultTemplate": "{{{ #extractResource id resourcegroups}}}"
         }
     ],
     "execution": {
