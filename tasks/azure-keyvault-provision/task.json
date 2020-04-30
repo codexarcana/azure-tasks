@@ -16,7 +16,7 @@
     "groups": [
         {
             "name": "cluster",
-            "displayName": "Kubernetes Cluster",
+            "displayName": "Azure Subscription",
             "isExpanded": true
         }
     ],
