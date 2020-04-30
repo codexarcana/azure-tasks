@@ -13,6 +13,13 @@
         "Patch": 0
     },
     "instanceNameFormat": "ProvisionAzureKeyVault",
+    "groups": [
+        {
+            "name": "cluster",
+            "displayName": "Kubernetes Cluster",
+            "isExpanded": true
+        }
+    ],
     "inputs": [
         {
             "name": "connectionType",
