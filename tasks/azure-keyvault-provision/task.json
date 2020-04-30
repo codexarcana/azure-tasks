@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "d9b779f1-cfa0-4a93-b60c-5751a36a0e5a",
+    "id": "7115cfc1-c608-4ba9-aec5-5f73ffb425c0",
     "name": "AzureKeyVaultProvisioning",
     "friendlyName": "ProvisionAzureKeyVault",
     "description": "Provisions a new instance of Azure Key Vault with optional entries",
