@@ -10,7 +10,7 @@
     "author": "eldermael",
     "license": "ISC",
     "dependencies": {
-        "azure-pipelines-task-lib": "^2.9.3",
+        "azure-pipelines-task-lib": "^4.0.1-preview",
         "glob-all": "^3.2.1",
         "js-yaml": "^3.13.1",
         "mustache": "^4.0.1",
